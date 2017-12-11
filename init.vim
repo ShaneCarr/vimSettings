@@ -1,3 +1,18 @@
+
+set runtimepath+=~/.vim_runtime
+set runtimepath^=~/.vim/bundle/ag
+
+source ~/.vim_runtime/vimrcs/basic.vim
+source ~/.vim_runtime/vimrcs/filetypes.vim
+source ~/.vim_runtime/vimrcs/plugins_config.vim
+source ~/.vim_runtime/vimrcs/extended.vim
+
+try
+source ~/.vim_runtime/my_configs.vim
+catch
+endtry
+
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -28,6 +43,8 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 
 Plugin 'Valloric/YouCompleteMe'
+
+Plugin 'mileszs/ack.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -61,10 +78,13 @@ set showmatch           " highlight matching [{()}]
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 set foldenable          " enable folding
+set clipboard=unnamedplus
+
 let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
+let g:ackprg = '/usr/bin/vendor_perl/ack -s -H --nogroup --column'
 
