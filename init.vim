@@ -52,6 +52,8 @@ filetype plugin indent on    " required
 
 let g:ycm_global_ycm_extra_conf = "~/.config/nvim/.ycm_extra_conf.py"
 
+let g:ackprg="ack -H --nocolor --nogroup --column"
+
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
@@ -86,5 +88,4 @@ let g:ctrlp_working_path_mode = 0
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
-let g:ackprg = '/usr/bin/vendor_perl/ack -s -H --nogroup --column'
 
